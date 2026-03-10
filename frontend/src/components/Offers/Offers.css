@@ -1,0 +1,636 @@
+/* Offers Section Styles */
+
+:root {
+  --primary-color: hsl(199, 100%, 33%);
+  --secondary-color: hsl(187, 85%, 43%);
+  --gradient-color: linear-gradient(to right, hsl(187, 85%, 43%), hsl(199, 100%, 33%));
+  --white-color: hsl(0, 0%, 100%);
+  --black-color: hsl(201, 33%, 16%);
+  --text-color: hsl(240, 4%, 36%);
+  --grey-text: rgb(190, 190, 190);
+  --card-bg: rgb(225, 225, 235);
+  --card-hover: rgb(255, 255, 255);
+  --success-color: #28a745;
+  --danger-color: #dc3545;
+  --body-color: rgb(240, 240, 246);
+}
+
+/* Offers Container */
+.offers-section {
+  width: 100%;
+  padding: 40px 20px 60px;
+  background: #f0f2f5;
+  min-height: 100vh;
+}
+
+.offers-container {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+/* Section Title */
+.offers-title {
+  margin-bottom: 30px;
+}
+
+.offers-title h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--black-color);
+  margin-bottom: 0;
+  text-align: left;
+}
+
+/* Tab Switcher */
+.offers-tabs {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 30px;
+  border-bottom: 2px solid #dee2e6;
+  padding-bottom: 0;
+}
+
+.tab-btn {
+  background: transparent;
+  border: none;
+  padding: 12px 24px;
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text-color);
+  cursor: pointer;
+  position: relative;
+  transition: all 0.3s ease;
+  border-bottom: 3px solid transparent;
+}
+
+.tab-btn:hover {
+  color: var(--primary-color);
+}
+
+.tab-btn.active {
+  color: var(--primary-color);
+  border-bottom: 3px solid var(--primary-color);
+}
+
+/* Search and Filter Controls */
+.offers-controls {
+  margin-bottom: 30px;
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  align-items: flex-start;
+}
+
+/* Search Box */
+.offers-search {
+  flex: 1;
+  min-width: 300px;
+  max-width: 500px;
+}
+
+.search-box {
+  position: relative;
+  width: 100%;
+}
+
+.search-input {
+  width: 100%;
+  padding: 12px 45px 12px 16px;
+  border: 1px solid #dee2e6;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  transition: all 0.3s ease;
+  background: white;
+}
+
+.search-input:focus {
+  outline: none;
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 3px rgba(0, 119, 182, 0.1);
+}
+
+.search-icon {
+  position: absolute;
+  right: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--grey-text);
+  font-size: 1.2rem;
+  pointer-events: none;
+}
+
+/* Filters */
+.offers-filters {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.filter-group {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.filter-label {
+  font-weight: 600;
+  color: var(--black-color);
+  font-size: 0.9rem;
+  white-space: nowrap;
+}
+
+.filter-select {
+  padding: 10px 16px;
+  border: 1px solid #dee2e6;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  color: var(--text-color);
+  background: white;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  min-width: 160px;
+}
+
+.filter-select:hover {
+  border-color: var(--secondary-color);
+}
+
+.filter-select:focus {
+  outline: none;
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 3px rgba(0, 119, 182, 0.1);
+}
+
+/* ===== TRAVEL PACKAGES GRID ===== */
+.offers-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 24px;
+  margin-top: 30px;
+}
+
+/* Offer Card */
+.offer-card {
+  background: white;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.offer-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+}
+
+/* Card Image Container */
+.offer-image-container {
+  position: relative;
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+}
+
+.offer-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.offer-card:hover .offer-image {
+  transform: scale(1.08);
+}
+
+/* Card Content */
+.offer-content {
+  padding: 18px;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.offer-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--black-color);
+  margin: 0;
+  line-height: 1.3;
+  text-align: center;
+}
+
+.offer-content .agency-name {
+  font-size: 0.9rem;
+  color: var(--text-color);
+  text-align: center;
+  margin: 0 0 8px 0;
+  font-weight: 500;
+}
+
+.offer-location {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--black-color);
+  font-size: 0.9rem;
+  margin: 0;
+}
+
+.offer-location svg {
+  font-size: 1rem;
+  color: var(--black-color);
+  flex-shrink: 0;
+}
+
+.offer-quick-info {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin: 0;
+  flex-wrap: wrap;
+}
+
+.info-item {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  color: var(--black-color);
+  font-size: 0.9rem;
+}
+
+.info-item svg {
+  font-size: 1rem;
+  color: var(--black-color);
+  flex-shrink: 0;
+}
+
+.info-separator {
+  color: var(--black-color);
+  margin: 0 4px;
+  font-weight: 500;
+}
+
+.offer-price {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 8px 0;
+}
+
+.offer-price svg {
+  font-size: 1.1rem;
+  color: var(--black-color);
+  flex-shrink: 0;
+}
+
+.offer-price span {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--black-color);
+}
+
+.offer-details {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin: 10px 0;
+}
+
+.detail-column h4 {
+  font-size: 0.9rem;
+  font-weight: 700;
+  margin: 0 0 6px 0;
+  text-transform: capitalize;
+  color: var(--black-color);
+  text-align: left;
+}
+
+.detail-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.detail-list li {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.85rem;
+  color: var(--black-color);
+  line-height: 1.4;
+}
+
+.detail-list li svg {
+  font-size: 0.95rem;
+  flex-shrink: 0;
+  color: var(--black-color);
+}
+
+.offer-actions {
+  display: flex;
+  justify-content: center;
+  margin-top: auto;
+  padding-top: 12px;
+}
+
+.btn-view-details {
+  background: white;
+  color: var(--black-color);
+  border: 1px solid var(--black-color);
+  padding: 10px 24px;
+  border-radius: 6px;
+  font-weight: 600;
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn-view-details:hover {
+  background: var(--black-color);
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* ===== DESTINATIONS GRID ===== */
+.destinations-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1.5rem;
+  margin-top: 30px;
+}
+
+.singleDestination {
+  height: 100%;
+  display: grid;
+  row-gap: 10px;
+  border-radius: 10px;
+  align-items: center;
+  background: var(--card-bg);
+  box-shadow: 0 2px 4px rgba(140, 140, 141, 0.549);
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.singleDestination:hover {
+  background: var(--card-hover);
+  box-shadow: 1px 4px 4px rgba(85, 85, 114, 0.549);
+  transform: translateY(-4px);
+}
+
+.singleDestination .imageDiv {
+  height: 180px;
+  width: 100%;
+  overflow: hidden;
+}
+
+.singleDestination .imageDiv img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  transition: 2s ease;
+}
+
+.singleDestination .imageDiv:hover img {
+  transform: scale(1.1);
+}
+
+.singleDestination .cardInfo {
+  padding: 1rem;
+}
+
+.singleDestination .cardInfo .destTitle {
+  color: var(--black-color);
+  font-size: 1.25rem;
+}
+
+.singleDestination .cardInfo .continent {
+  gap: 0.5rem;
+  display: flex;
+  align-items: center;
+}
+
+.singleDestination .cardInfo .continent .icon {
+  color: var(--text-color);
+  font-size: 18px;
+}
+
+.singleDestination .cardInfo .continent .name {
+  color: var(--text-color);
+  font-weight: 400;
+}
+
+.singleDestination .cardInfo .fees {
+  width: 100%;
+  justify-content: space-between;
+  padding: 1rem;
+  margin: 1rem 0;
+  border-top: 1.5px solid var(--grey-text);
+  border-bottom: 1.5px solid var(--grey-text);
+  display: flex;
+  align-items: center;
+}
+
+.singleDestination .cardInfo .fees .grade {
+  color: var(--text-color);
+  max-width: 100px;
+  line-height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.singleDestination .cardInfo .fees .grade small {
+  text-align: center;
+  background: var(--gradient-color);
+  border-radius: 1rem;
+  color: var(--white-color);
+  padding: 1px 10px;
+  font-size: 10px;
+}
+
+.singleDestination .cardInfo .fees .price {
+  font-size: 2rem;
+  color: var(--black-color);
+}
+
+.singleDestination .cardInfo .desc {
+  font-size: 13.5px;
+  color: var(--text-color);
+  font-weight: 500;
+}
+
+.singleDestination .cardInfo .btn {
+  margin-top: 1rem;
+  color: var(--white-color);
+  font-weight: 600;
+  justify-content: space-between;
+  gap: 0.5rem;
+  background: var(--gradient-color);
+  border: none;
+  padding: 0.6rem 1.5rem;
+  border-radius: 3rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  transition: all 0.3s ease;
+}
+
+.singleDestination .cardInfo .btn:hover {
+  background: var(--primary-color);
+  transform: translateY(-2px);
+}
+
+.singleDestination .cardInfo .btn .icon {
+  align-self: center;
+  font-size: 18px;
+}
+
+.flex {
+  display: flex;
+  align-items: center;
+}
+
+/* Empty State */
+.offers-empty {
+  text-align: center;
+  padding: 80px 20px;
+  color: var(--text-color);
+  grid-column: 1 / -1;
+}
+
+.offers-empty svg {
+  font-size: 4rem;
+  color: var(--grey-text);
+  margin-bottom: 20px;
+}
+
+.offers-empty h3 {
+  font-size: 1.5rem;
+  margin-bottom: 12px;
+  color: var(--black-color);
+}
+
+.offers-empty p {
+  font-size: 1rem;
+  color: var(--text-color);
+}
+
+/* Results Info */
+.offers-results-info {
+  text-align: center;
+  margin-top: 40px;
+  padding-top: 30px;
+  border-top: 2px solid #e9ecef;
+}
+
+.offers-results-info p {
+  color: var(--text-color);
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 1200px) {
+  .offers-grid,
+  .destinations-grid {
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 20px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .offers-section {
+    padding: 30px 16px 50px;
+  }
+
+  .offers-title h2 {
+    font-size: 1.6rem;
+  }
+
+  .offers-tabs {
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .tab-btn {
+    padding: 12px 16px;
+    text-align: left;
+    border-bottom: 1px solid #dee2e6;
+  }
+
+  .tab-btn.active {
+    border-bottom: 3px solid var(--primary-color);
+  }
+
+  .offers-controls {
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .offers-search {
+    max-width: 100%;
+    width: 100%;
+  }
+
+  .offers-filters {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .filter-group {
+    flex: 1;
+  }
+
+  .filter-select {
+    width: 100%;
+    min-width: auto;
+  }
+
+  .offers-grid,
+  .destinations-grid {
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 16px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .offers-title h2 {
+    font-size: 1.4rem;
+  }
+
+  .offers-grid,
+  .destinations-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .offers-filters {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .filter-group {
+    width: 100%;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6px;
+  }
+
+  .filter-select {
+    width: 100%;
+  }
+}
+
+/* Smooth Scroll */
+html {
+  scroll-behavior: smooth;
+}
