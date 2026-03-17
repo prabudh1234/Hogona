@@ -843,7 +843,7 @@ export const Data = [
   id: 20,
   imgSrc: pangong,
   destTitle: "Pangong Lake",
-  location: "Ladakh",
+  location: "ladakhh",
   grade: "NATURE",
   fees: "9999",
   description:
@@ -854,7 +854,7 @@ export const Data = [
   id: 21,
   imgSrc: nubra,
   destTitle: "Nubra Valley",
-  location: "Ladakh",
+  location: " Leh",
   grade: "DESERT MOUNTAIN",
   fees: "9499",
   description:
