@@ -23,14 +23,25 @@ const SignUp = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+
     if (isSignUp) {
+      if (formData.password !== formData.confirmPassword) {
+        alert("Passwords do not match");
+        return;
+      }
+
       console.log("Sign up data:", formData);
-      // After successful signup, redirect to signin
-      // navigate("/signin");
+
+      // 👉 After signup
+      navigate("/signin");
     } else {
-      console.log("Sign in data:", { email: formData.email, password: formData.password });
-      // After successful signin, redirect to home
-      // navigate("/");
+      console.log("Sign in data:", {
+        email: formData.email,
+        password: formData.password
+      });
+
+      // 👉 After login
+      navigate("/");
     }
   };
 
@@ -49,10 +60,12 @@ const SignUp = () => {
     <div style={styles.container}>
       <div style={styles.card}>
         <div style={styles.header}>
-          <h2 style={styles.title}>{isSignUp ? "Create Account" : "Welcome Back"}</h2>
+          <h2 style={styles.title}>
+            {isSignUp ? "Create Account" : "Welcome Back"}
+          </h2>
           <p style={styles.subtitle}>
-            {isSignUp 
-              ? "Sign up to get started" 
+            {isSignUp
+              ? "Sign up to get started"
               : "Sign in to your account"}
           </p>
         </div>
@@ -131,7 +144,13 @@ const SignUp = () => {
 
           {!isSignUp && (
             <div style={styles.forgotPassword}>
-              <a href="#" style={styles.link}>Forgot password?</a>
+              <button
+                type="button"
+                onClick={() => navigate("/forgot-password")}
+                style={styles.link}
+              >
+                Forgot password?
+              </button>
             </div>
           )}
 
@@ -158,7 +177,9 @@ const SignUp = () => {
 
         <div style={styles.footer}>
           <p style={styles.footerText}>
-            {isSignUp ? "Already have an account?" : "Don't have an account?"}{" "}
+            {isSignUp
+              ? "Already have an account?"
+              : "Don't have an account?"}{" "}
             <button onClick={toggleMode} style={styles.toggleButton}>
               {isSignUp ? "Sign In" : "Sign Up"}
             </button>
@@ -169,6 +190,7 @@ const SignUp = () => {
   );
 };
 
+// ================= STYLES =================
 const styles = {
   container: {
     minHeight: "100vh",
@@ -177,12 +199,12 @@ const styles = {
     justifyContent: "center",
     background: "linear-gradient(135deg, #ffffff00 0%, #ffffff00 100%)",
     padding: "20px",
-    fontFamily: "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif"
+    fontFamily: "system-ui, sans-serif"
   },
   card: {
     backgroundColor: "#ffffff",
     borderRadius: "16px",
-    boxShadow: "0 20px 60px rgba(0, 0, 0, 0.3)",
+    boxShadow: "0 20px 60px rgba(0,0,0,0.3)",
     padding: "40px",
     width: "100%",
     maxWidth: "450px"
@@ -194,13 +216,11 @@ const styles = {
   title: {
     fontSize: "28px",
     fontWeight: "700",
-    color: "#1a202c",
-    margin: "0 0 8px 0"
+    margin: "0 0 8px"
   },
   subtitle: {
     fontSize: "14px",
-    color: "#718096",
-    margin: "0"
+    color: "#718096"
   },
   form: {
     display: "flex",
@@ -214,101 +234,57 @@ const styles = {
   },
   label: {
     fontSize: "14px",
-    fontWeight: "600",
-    color: "#2d3748"
+    fontWeight: "600"
   },
   input: {
-    padding: "12px 16px",
-    fontSize: "15px",
+    padding: "12px",
     border: "2px solid #e2e8f0",
-    borderRadius: "8px",
-    outline: "none",
-    transition: "all 0.2s",
-    fontFamily: "inherit"
+    borderRadius: "8px"
   },
   forgotPassword: {
-    textAlign: "right",
-    marginTop: "-8px"
+    textAlign: "right"
   },
   link: {
-    fontSize: "14px",
+    background: "none",
+    border: "none",
     color: "#667eea",
-    textDecoration: "none",
-    fontWeight: "500"
+    cursor: "pointer",
+    textDecoration: "underline"
   },
   button: {
     padding: "14px",
-    fontSize: "16px",
-    fontWeight: "600",
-    color: "#ffffff",
-    background: "linear-gradient(135deg, #667eea 0%, #764ba2 100%)",
+    background: "#667eea",
+    color: "#fff",
     border: "none",
     borderRadius: "8px",
-    cursor: "pointer",
-    transition: "transform 0.2s, box-shadow 0.2s",
-    marginTop: "8px"
+    cursor: "pointer"
   },
   divider: {
-    position: "relative",
     textAlign: "center",
-    margin: "24px 0",
-    height: "1px",
-    background: "#e2e8f0"
+    margin: "20px 0"
   },
   dividerText: {
-    position: "absolute",
-    top: "50%",
-    left: "50%",
-    transform: "translate(-50%, -50%)",
-    backgroundColor: "#ffffff",
-    padding: "0 16px",
-    fontSize: "13px",
-    color: "#a0aec0",
-    fontWeight: "500"
-  },
-  socialButtons: {
-    display: "flex",
-    flexDirection: "column",
-    gap: "12px"
+    fontSize: "12px",
+    color: "#999"
   },
   socialButton: {
-    padding: "12px",
-    fontSize: "15px",
-    fontWeight: "500",
-    color: "#2d3748",
-    backgroundColor: "#ffffff",
-    border: "2px solid #e2e8f0",
+    padding: "10px",
+    border: "1px solid #ddd",
     borderRadius: "8px",
-    cursor: "pointer",
-    display: "flex",
-    alignItems: "center",
-    justifyContent: "center",
-    gap: "12px",
-    transition: "all 0.2s",
-    fontFamily: "inherit"
+    cursor: "pointer"
   },
   icon: {
-    width: "20px",
-    height: "20px"
+    width: "20px"
   },
   footer: {
-    marginTop: "24px",
+    marginTop: "20px",
     textAlign: "center"
-  },
-  footerText: {
-    fontSize: "14px",
-    color: "#718096",
-    margin: "0"
   },
   toggleButton: {
     background: "none",
     border: "none",
     color: "#667eea",
-    fontWeight: "600",
-    cursor: "pointer",
-    fontSize: "14px",
-    textDecoration: "underline",
-    fontFamily: "inherit"
+    cursor: "pointer"
   }
 };
 

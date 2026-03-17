@@ -23,7 +23,7 @@ import img14 from "../../Assets/Mysore.jpg";
 import img15 from "../../Assets/Murudeshwar.jpg";
 import img16 from "../../Assets/udupi.jpg";
 import img17 from "../../Assets/Munnar.jpg";
-import ladakh from "../../Assets/ladakh.jpeg";
+import img18 from "../../Assets/ladakh.jpg";
 import pangong from "../../Assets/pangong.jpg";
 import nubra from "../../Assets/nubra.jpg";
 
@@ -827,7 +827,39 @@ export const Data = [
       "Additional adventure activities",
       "Tips for guide and driver"
     ]
-  }
+  },
+  {
+  id: 19,
+  imgSrc: ladakh,
+  destTitle: "Ladakh",
+  location: "Jammu & Kashmir",
+  grade: "ADVENTURE",
+  fees: "8999",
+  description:
+    "Ladakh is known for its breathtaking landscapes, high-altitude passes, monasteries, and adventure tourism.",
+},
+
+{
+  id: 20,
+  imgSrc: pangong,
+  destTitle: "Pangong Lake",
+  location: "Ladakh",
+  grade: "NATURE",
+  fees: "9999",
+  description:
+    "Pangong Lake is a stunning high-altitude lake famous for its changing colors and scenic beauty.",
+},
+
+{
+  id: 21,
+  imgSrc: nubra,
+  destTitle: "Nubra Valley",
+  location: "Ladakh",
+  grade: "DESERT MOUNTAIN",
+  fees: "9499",
+  description:
+    "Nubra Valley is known for sand dunes, double-humped camels, and beautiful monasteries.",
+}
 ];
 
 const Main = () => {
