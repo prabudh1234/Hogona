@@ -1,12 +1,8 @@
 import React, { useEffect, useState, useCallback } from "react";
 import "./Packages.css";
 import { Data } from "../Main/Main";
-import {
-  HiOutlineLocationMarker,
-  HiOutlineSearch,
-} from "react-icons/hi";
+import { HiOutlineLocationMarker, HiOutlineSearch } from "react-icons/hi";
 import { MdClose } from "react-icons/md";
-import { FaFilter } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
 import Aos from "aos";
 import "aos/dist/aos.css";
@@ -17,23 +13,17 @@ const Packages = () => {
   // STATES
   const [searchFrom, setSearchFrom] = useState("");
   const [searchTo, setSearchTo] = useState("");
-  const [startDate, setStartDate] = useState("");
-  const [guests, setGuests] = useState("2 Adults");
   const [durationRange, setDurationRange] = useState([1, 14]);
-  const [flightFilter, setFlightFilter] = useState("all");
   const [budgetRange, setBudgetRange] = useState([1000, 10000]);
   const [selectedBudgetRanges, setSelectedBudgetRanges] = useState([]);
-  const [hotelCategory, setHotelCategory] = useState([]);
-  const [sortBy, setSortBy] = useState("popular");
-  const [activeFilters, setActiveFilters] = useState([]);
-  const [showFilters, setShowFilters] = useState(true);
   const [filteredPackages, setFilteredPackages] = useState(Data);
+  const [activeFilters, setActiveFilters] = useState([]);
 
   useEffect(() => {
     Aos.init({ duration: 1200 });
   }, []);
 
-  // ✅ FIXED FUNCTION (useCallback)
+  // Update active filters
   const updateActiveFilters = useCallback(() => {
     const filters = [];
 
@@ -82,10 +72,8 @@ const Packages = () => {
         const price = parseInt(pkg.fees);
         return selectedBudgetRanges.some((range) => {
           if (range === "< ₹3,000") return price < 3000;
-          if (range === "₹3,000 - ₹5,000")
-            return price >= 3000 && price < 5000;
-          if (range === "₹5,000 - ₹7,000")
-            return price >= 5000 && price < 7000;
+          if (range === "₹3,000 - ₹5,000") return price >= 3000 && price < 5000;
+          if (range === "₹5,000 - ₹7,000") return price >= 5000 && price < 7000;
           if (range === "> ₹7,000") return price >= 7000;
           return false;
         });
@@ -97,33 +85,9 @@ const Packages = () => {
       return price >= budgetRange[0] && price <= budgetRange[1];
     });
 
-    if (sortBy === "price-low") {
-      results = [...results].sort(
-        (a, b) => parseInt(a.fees) - parseInt(b.fees)
-      );
-    } else if (sortBy === "price-high") {
-      results = [...results].sort(
-        (a, b) => parseInt(b.fees) - parseInt(a.fees)
-      );
-    } else if (sortBy === "duration") {
-      results = [...results].sort((a, b) => {
-        return (parseInt(b.duration) || 0) - (parseInt(a.duration) || 0);
-      });
-    }
-
     setFilteredPackages(results);
     updateActiveFilters();
-  }, [
-    searchFrom,
-    searchTo,
-    durationRange,
-    flightFilter,
-    budgetRange,
-    selectedBudgetRanges,
-    hotelCategory,
-    sortBy,
-    updateActiveFilters,
-  ]);
+  }, [searchFrom, searchTo, durationRange, budgetRange, selectedBudgetRanges, updateActiveFilters]);
 
   // HANDLERS
   const clearFilter = (filterKey) => {
@@ -132,9 +96,7 @@ const Packages = () => {
     else if (filterKey === "duration") setDurationRange([1, 14]);
     else if (filterKey.startsWith("budget-")) {
       const range = filterKey.replace("budget-", "");
-      setSelectedBudgetRanges(
-        selectedBudgetRanges.filter((r) => r !== range)
-      );
+      setSelectedBudgetRanges(selectedBudgetRanges.filter((r) => r !== range));
     }
   };
 
@@ -144,32 +106,12 @@ const Packages = () => {
     setDurationRange([1, 14]);
     setBudgetRange([1000, 10000]);
     setSelectedBudgetRanges([]);
-    setHotelCategory([]);
-    setFlightFilter("all");
     setActiveFilters([]);
-  };
-
-  const handleBudgetRangeCheckbox = (range) => {
-    if (selectedBudgetRanges.includes(range)) {
-      setSelectedBudgetRanges(
-        selectedBudgetRanges.filter((r) => r !== range)
-      );
-    } else {
-      setSelectedBudgetRanges([...selectedBudgetRanges, range]);
-    }
   };
 
   const handleDetailsClick = (id) => {
     navigate(`/destination/${id}`);
   };
-
-  // UI DATA
-  const budgetRanges = [
-    { label: "< ₹3,000", count: Data.filter(p => parseInt(p.fees) < 3000).length },
-    { label: "₹3,000 - ₹5,000", count: Data.filter(p => parseInt(p.fees) >= 3000 && parseInt(p.fees) < 5000).length },
-    { label: "₹5,000 - ₹7,000", count: Data.filter(p => parseInt(p.fees) >= 5000 && parseInt(p.fees) < 7000).length },
-    { label: "> ₹7,000", count: Data.filter(p => parseInt(p.fees) >= 7000).length },
-  ];
 
   return (
     <section className="packages-section">

@@ -24,6 +24,20 @@ import "aos/dist/aos.css";
 // Hotels Data
 const hotelsData = [
   {
+    id: 1,
+    name: "The Grand Palace Hotel",
+    location: "Bangalore",
+    city: "Bangalore",
+    rating: 4.5,
+    reviews: 234,
+    price: 3500,
+    image:
+      "https://images.unsplash.com/photo-1571896349842-33c89424de2d?w=800",
+    type: "Luxury",
+    amenities: ["WiFi", "Pool", "Parking", "Restaurant", "Gym", "Spa"],
+    description: "Luxury hotel with world-class amenities."
+  },
+  {
     id: 2,
     name: "Taj Gateway Resort",
     location: "Goa",
@@ -31,7 +45,8 @@ const hotelsData = [
     rating: 4.8,
     reviews: 456,
     price: 5500,
-    image: "https://images.unsplash.com/photo-1571896349842-33c89424de2d?w=800",
+    image:
+      "https://images.unsplash.com/photo-1571896349842-33c89424de2d?w=800",
     type: "Resort",
     amenities: ["WiFi", "Pool", "Restaurant", "Spa", "Room Service"],
     description: "Beachfront paradise with stunning ocean views and premium facilities."
@@ -44,7 +59,8 @@ const hotelsData = [
     rating: 4.7,
     reviews: 389,
     price: 6500,
-    image: "https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?w=800",
+    image:
+      "https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?w=800",
     type: "Luxury",
     amenities: ["WiFi", "Restaurant", "Gym"],
     description: "Premium business hotel in Mumbai."
@@ -57,23 +73,11 @@ const hotelsData = [
     rating: 4.3,
     reviews: 167,
     price: 2800,
-    image: "https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?w=800",
+    image:
+      "https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?w=800",
     type: "Mountain Resort",
     amenities: ["WiFi", "Parking", "Restaurant"],
     description: "Cozy mountain retreat with Himalayan views."
-  },
-  {
-    id: 1,
-    name: "The Grand Palace Hotel",
-    location: "Bangalore",
-    city: "Bangalore",
-    rating: 4.5,
-    reviews: 234,
-    price: 3500,
-    image: "https://images.unsplash.com/photo-1571896349842-33c89424de2d?w=800",
-    type: "Luxury",
-    amenities: ["WiFi", "Pool", "Parking", "Restaurant", "Gym", "Spa"],
-    description: "Luxury hotel with world-class amenities."
   }
 ];
 
@@ -89,10 +93,11 @@ const Hotels = () => {
     Aos.init({ duration: 1000 });
   }, []);
 
-  // Filter Logic
+  // Filter & Sort Logic
   useEffect(() => {
     let results = hotelsData;
 
+    // Search
     if (searchTerm) {
       results = results.filter(
         (hotel) =>
@@ -101,31 +106,27 @@ const Hotels = () => {
       );
     }
 
+    // City Filter
     if (selectedCity !== "all") {
       results = results.filter((hotel) => hotel.city === selectedCity);
     }
 
+    // Type Filter
     if (selectedType !== "all") {
       results = results.filter((hotel) => hotel.type === selectedType);
     }
 
+    // Price Filter
     if (priceRange !== "all") {
-      if (priceRange === "budget") {
-        results = results.filter((hotel) => hotel.price < 3000);
-      } else if (priceRange === "mid") {
-        results = results.filter((hotel) => hotel.price >= 3000 && hotel.price < 5000);
-      } else if (priceRange === "luxury") {
-        results = results.filter((hotel) => hotel.price >= 5000);
-      }
+      if (priceRange === "budget") results = results.filter((h) => h.price < 3000);
+      else if (priceRange === "mid") results = results.filter((h) => h.price >= 3000 && h.price < 5000);
+      else if (priceRange === "luxury") results = results.filter((h) => h.price >= 5000);
     }
 
-    if (sortBy === "price-low") {
-      results = [...results].sort((a, b) => a.price - b.price);
-    } else if (sortBy === "price-high") {
-      results = [...results].sort((a, b) => b.price - a.price);
-    } else if (sortBy === "rating") {
-      results = [...results].sort((a, b) => b.rating - a.rating);
-    }
+    // Sorting
+    if (sortBy === "price-low") results = [...results].sort((a, b) => a.price - b.price);
+    else if (sortBy === "price-high") results = [...results].sort((a, b) => b.price - a.price);
+    else if (sortBy === "rating") results = [...results].sort((a, b) => b.rating - a.rating);
 
     setFilteredHotels(results);
   }, [searchTerm, selectedCity, selectedType, priceRange, sortBy]);
@@ -139,36 +140,27 @@ const Hotels = () => {
     ));
   };
 
-  // ✅ Amenity Icons
   const getAmenityIcon = (amenity) => {
     switch (amenity) {
-      case "WiFi":
-        return <FaWifi />;
-      case "Pool":
-        return <FaSwimmingPool />;
-      case "Parking":
-        return <FaParking />;
-      case "Restaurant":
-        return <FaUtensils />;
-      case "Spa":
-        return <FaSpa />;
-      case "Gym":
-        return <FaDumbbell />;
-      case "Room Service":
-        return <MdRoomService />;
-      default:
-        return null;
+      case "WiFi": return <FaWifi />;
+      case "Pool": return <FaSwimmingPool />;
+      case "Parking": return <FaParking />;
+      case "Restaurant": return <FaUtensils />;
+      case "Spa": return <FaSpa />;
+      case "Gym": return <FaDumbbell />;
+      case "Room Service": return <MdRoomService />;
+      default: return null;
     }
   };
 
   return (
     <section className="hotels-section">
       <div className="hotels-container">
-
         <div className="hotels-hero">
           <h1>Find Your Perfect Stay</h1>
         </div>
 
+        {/* Search */}
         <div className="search-bar-large">
           <HiOutlineSearch />
           <input
@@ -179,53 +171,59 @@ const Hotels = () => {
           />
         </div>
 
+        {/* Filters */}
         <div className="filters-row">
-          <select onChange={(e) => setSelectedCity(e.target.value)}>
-            {cities.map((c) => <option key={c}>{c}</option>)}
+          <select value={selectedCity} onChange={(e) => setSelectedCity(e.target.value)}>
+            {cities.map((c) => <option key={c} value={c}>{c}</option>)}
           </select>
 
-          <select onChange={(e) => setSelectedType(e.target.value)}>
-            {types.map((t) => <option key={t}>{t}</option>)}
+          <select value={selectedType} onChange={(e) => setSelectedType(e.target.value)}>
+            {types.map((t) => <option key={t} value={t}>{t}</option>)}
           </select>
 
-          <select onChange={(e) => setPriceRange(e.target.value)}>
-            <option value="all">All</option>
+          <select value={priceRange} onChange={(e) => setPriceRange(e.target.value)}>
+            <option value="all">All Prices</option>
             <option value="budget">Budget</option>
             <option value="mid">Mid</option>
             <option value="luxury">Luxury</option>
           </select>
+
+          <select value={sortBy} onChange={(e) => setSortBy(e.target.value)}>
+            <option value="default">Sort By</option>
+            <option value="price-low">Price: Low → High</option>
+            <option value="price-high">Price: High → Low</option>
+            <option value="rating">Rating</option>
+          </select>
         </div>
 
+        {/* Hotels Grid */}
         <div className="hotels-grid">
-          {filteredHotels.map((hotel) => (
-            <div key={hotel.id} className="hotel-card">
+          {filteredHotels.length === 0 ? (
+            <p>No hotels found.</p>
+          ) : (
+            filteredHotels.map((hotel) => (
+              <div key={hotel.id} className="hotel-card" data-aos="fade-up">
+                <img src={hotel.image} alt={hotel.name} />
 
-              <img src={hotel.image} alt={hotel.name} />
+                <h3>{hotel.name}</h3>
+                <p><HiOutlineLocationMarker /> {hotel.location}</p>
+                <div className="stars">{renderStars(hotel.rating)}</div>
+                <p>{hotel.description}</p>
 
-              <h3>{hotel.name}</h3>
+                <div className="hotel-amenities">
+                  {hotel.amenities.map((a, i) => (
+                    <span key={i} className="amenity-tag">
+                      {getAmenityIcon(a)} {a}
+                    </span>
+                  ))}
+                </div>
 
-              <p><HiOutlineLocationMarker /> {hotel.location}</p>
-
-              <div className="stars">{renderStars(hotel.rating)}</div>
-
-              <p>{hotel.description}</p>
-
-              <div className="hotel-amenities">
-                {hotel.amenities.map((a, i) => (
-                  <span key={i} className="amenity-tag">
-                    {getAmenityIcon(a)} {a}
-                  </span>
-                ))}
+                <h4>₹{hotel.price}</h4>
+                <button className="btn-book">Book Now</button>
               </div>
-
-              <h4>₹{hotel.price}</h4>
-
-              <button className="btn-book">Book Now</button>
-
-            </div>
-          ))}
+            ))
+          )}
         </div>
-
       </div>
     </section>
   );
