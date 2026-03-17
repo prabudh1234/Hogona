@@ -23,9 +23,9 @@ import img14 from "../../Assets/Mysore.jpg";
 import img15 from "../../Assets/Murudeshwar.jpg";
 import img16 from "../../Assets/udupi.jpg";
 import img17 from "../../Assets/Munnar.jpg";
-import img18 from "../../Assets/ladakh.jpg";
 import pangong from "../../Assets/pangong.jpg";
 import nubra from "../../Assets/nubra.jpg";
+import ladakh from "../../Assets/ladakh.jpg";  // <-- Make sure the file exists exactly with this name
 
 import Aos from "aos";
 import "aos/dist/aos.css";
