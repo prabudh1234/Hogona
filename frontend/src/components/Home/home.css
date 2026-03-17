@@ -1,208 +1,284 @@
-/* HERO */
-.home {
-  position: relative;
-  height: 100vh;
-  width: 100%;
-  overflow: hidden;
+/* ===============================
+GLOBAL
+================================= */
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family: "Poppins", sans-serif;
 }
 
-.home video {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+body{
+  background:#f5f5f5;
 }
 
-.overlay {
-  position: absolute;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.45);
+/* ===============================
+NAVBAR
+================================= */
+
+.navbar{
+  width:100%;
+  background:#ffffff;
+  padding:15px 60px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  box-shadow:0 2px 8px rgba(0,0,0,0.08);
 }
 
-.homeContent {
-  position: relative;
-  z-index: 2;
-  padding-top: 5rem;
-  color: #fff;
-  text-align: center;
+.logo{
+  font-size:22px;
+  font-weight:700;
 }
 
-/* TEXT */
-.smallText {
-  letter-spacing: 2px;
-  font-size: 0.9rem;
+.navLinks{
+  display:flex;
+  gap:30px;
+  align-items:center;
 }
 
-.homeTitle {
-  font-size: 2.5rem;
-  margin: 1rem 0 2rem;
+.navLinks a{
+  text-decoration:none;
+  color:#333;
+  font-size:14px;
 }
 
-/* 🔥 OFFER AD BOX */
-.offersAdBox {
-  width: 40%;
-  max-width: 900px;
-  height: 220px;
-  margin: 2.5rem auto 2.5rem;
-  padding: 1rem;
-  border-radius: 22px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  position: relative;
-  overflow: hidden;
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.255);
+.bookBtn{
+  background:#0077b6;
+  color:#fff;
+  padding:10px 20px;
+  border-radius:25px;
+  font-size:14px;
 }
 
-.offersAdBox::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background:linear-gradient(135deg, #ffffff6e, rgb(0 0 0 / 26%));
+/* ===============================
+HERO SECTION
+================================= */
+
+.home{
+  position:relative;
+  height:100vh;
+  width:100%;
+  overflow:hidden;
 }
 
-.bgImage {
-  background-size: cover;
-  background-position: center;
+.home video{
+  position:absolute;
+  width:100%;
+  height:100%;
+  object-fit:cover;
 }
 
-.adContent {
-  position: relative;
-  z-index: 2;
-  padding: 2rem;
-  text-align: left;
+.overlay{
+  position:absolute;
+  inset:0;
+  background:rgba(0,0,0,0.35);
 }
 
-.adTag {
-  background: #ffb703;
-  color: #000;
-  padding: 5px 14px;
-  border-radius: 20px;
-  font-size: 0.75rem;
-  font-weight: 700;
-  z-index: 1;
+/* ===============================
+HERO TEXT
+================================= */
+
+.homeContent{
+  position:relative;
+  z-index:2;
+  text-align:center;
+  color:white;
+  padding-top:120px;
 }
 
-.adContent h2 {
-  font-size: 2rem;
-  margin: 0.6rem 0;
+.smallText{
+  letter-spacing:2px;
+  font-size:14px;
 }
 
-.agencyName {
-  opacity: 0.9;
+.homeTitle{
+  font-size:48px;
+  margin-top:10px;
+  font-weight:700;
 }
 
-.priceRow {
-  display: flex;
-  gap: 1rem;
-  align-items: center;
+/* ===============================
+SEARCH CARD
+================================= */
+
+.cardDiv{
+  background:white;
+  margin:40px auto;
+  padding:25px;
+  border-radius:18px;
+  max-width:900px;
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  gap:20px;
+  box-shadow:0 10px 30px rgba(0,0,0,0.15);
 }
 
-.price {
-  font-size: 1.6rem;
-  color: #ffb703;
-  font-weight: bold;
+.cardDiv label{
+  font-weight:600;
+  color:#333;
+  font-size:14px;
 }
 
-.adBtn {
-  padding: 10px 24px;
-  border-radius: 30px;
-  border: none;
-  font-weight: 700;
-  cursor: pointer;
+.input{
+  background:#f2f2f2;
+  padding:10px;
+  border-radius:10px;
+  display:flex;
+  align-items:center;
 }
 
-/* SEARCH CARD */
-.cardDiv {
-  background: #fff;
-  padding: 1.5rem;
-  border-radius: 16px;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 1rem;
-  max-width: 900px;
-  margin: 0 auto;
-}
-
-.cardDiv label {
-  color: #333;
-  font-weight: 600;
-}
-
-.input {
-  background: #f1f1f1;
-  padding: 0.6rem;
-  border-radius: 8px;
-  display: flex;
-  align-items: center;
-}
-
-.input input {
-  border: none;
-  background: transparent;
-  width: 100%;
-}
-
-.searchOptions {
-  grid-column: 1 / -1;
-  background: linear-gradient(90deg, #0077b6, #00b4d8);
-  color: #fff;
-  padding: 10px;
-  border-radius: 30px;
-  justify-content: center;
-  cursor: pointer;
-}
-
-/* OFFERS GRID */
-.offersSection {
-  padding: 2rem;
-
-}
-
-.offersGrid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 1.5rem;
-}
-
-.offerCard {
-  background: #fff;
-  border-radius: 16px;
-  padding: 1rem;
-  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.1);
-  text-align: center;
-}
-
-.offerCard img {
-  width: 100%;
-  height: 150px;
-  border-radius: 12px;
-  object-fit: cover;
-}
-
-.offerCard .price {
-  color: #e63946;
-  font-weight: bold;
-}
-.offerCard .destination {
-  font-size: 1.1rem;
-  margin: 0.5rem 0;
-  color: #333;
-}
-
-.total{
-  color: #000;
-}
-
-.label_total{
-      justify-content: space-between;
-
-}
-
-#label{
-  text-align: left;
+.input input{
+  border:none;
+  background:transparent;
+  width:100%;
+  outline:none;
+  font-size:14px;
 }
 
 .priceInput .input{
-  padding: 0.9rem;
+  padding:12px;
+}
+
+/* ===============================
+SEARCH BUTTON
+================================= */
+
+.searchOptions{
+  grid-column:1/-1;
+  background:linear-gradient(90deg,#0077b6,#00b4d8);
+  color:#fff;
+  padding:12px;
+  border-radius:30px;
+  text-align:center;
+  cursor:pointer;
+  font-weight:600;
+}
+
+/* ===============================
+OFFER AD BOX
+================================= */
+
+.offersAdBox{
+  width:420px;
+  height:210px;
+  margin:40px auto;
+  border-radius:22px;
+  padding:20px;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  position:relative;
+  overflow:hidden;
+  backdrop-filter:blur(12px);
+  background:rgba(255,255,255,0.2);
+  box-shadow:0 15px 40px rgba(0,0,0,0.2);
+}
+
+.offersAdBox::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:linear-gradient(135deg,#ffffff80,rgba(0,0,0,0.25));
+}
+
+.adContent{
+  position:relative;
+  z-index:2;
+  text-align:center;
+}
+
+.adTag{
+  background:#ffb703;
+  padding:6px 14px;
+  border-radius:20px;
+  font-size:12px;
+  font-weight:700;
+  color:#000;
+}
+
+.adContent h2{
+  margin-top:10px;
+  font-size:28px;
+}
+
+.agencyName{
+  opacity:0.9;
+  margin-top:5px;
+}
+
+.priceRow{
+  display:flex;
+  justify-content:center;
+  gap:15px;
+  align-items:center;
+  margin-top:10px;
+}
+
+.price{
+  font-size:26px;
+  font-weight:bold;
+  color:#ffb703;
+}
+
+.adBtn{
+  padding:8px 20px;
+  border-radius:25px;
+  border:none;
+  background:white;
+  cursor:pointer;
+  font-weight:600;
+}
+
+/* ===============================
+OFFERS GRID
+================================= */
+
+.offersSection{
+  padding:60px;
+}
+
+.offersGrid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
+  gap:25px;
+}
+
+.offerCard{
+  background:white;
+  border-radius:16px;
+  padding:15px;
+  text-align:center;
+  box-shadow:0 8px 18px rgba(0,0,0,0.1);
+}
+
+.offerCard img{
+  width:100%;
+  height:150px;
+  object-fit:cover;
+  border-radius:12px;
+}
+
+.offerCard .destination{
+  font-size:18px;
+  margin-top:8px;
+}
+
+.offerCard .price{
+  color:#e63946;
+  margin-top:5px;
+}
+
+.total{
+  color:#000;
+}
+
+.label_total{
+  display:flex;
+  justify-content:space-between;
+}
+
+#label{
+  text-align:left;
 }

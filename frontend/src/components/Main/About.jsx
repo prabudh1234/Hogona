@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import "./About.css";
-import founderImage from "../../Assets/PRABUDH PHOTO.jpeg";
+import founderImage from "../../Assets/PRABUDH_PHOTO.jpeg";
 import { 
   HiOutlineLocationMarker, 
   HiOutlineMail, 

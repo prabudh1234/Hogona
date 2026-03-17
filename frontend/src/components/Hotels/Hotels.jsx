@@ -25,19 +25,7 @@ import "aos/dist/aos.css";
 
 // Hotels Data
 const hotelsData = [
-  {
-    id: 1,
-    name: "The Grand Palace Hotel",
-    location: "Bangalore",
-    city: "Bangalore",
-    rating: 4.5,
-    reviews: 234,
-    price: 3500,
-    image: "https://images.unsplash.com/photo-1566073171259-6a40f3cc3c7a?w=800",
-    type: "Luxury",
-    amenities: ["WiFi", "Pool", "Parking", "Restaurant", "Gym", "Spa"],
-    description: "Experience luxury at its finest with world-class amenities and exceptional service."
-  },
+ 
   {
     id: 2,
     name: "Taj Gateway Resort",
@@ -176,11 +164,25 @@ const hotelsData = [
     rating: 4.4,
     reviews: 198,
     price: 3400,
-    image: "https://images.unsplash.com/photo-1566073271207-4a0b98b85d5a?w=800",
+    image: "https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?w=800",
     type: "Nature Resort",
     amenities: ["WiFi", "Coffee Tours", "Restaurant", "Nature Walks", "Bonfire"],
     description: "Immerse yourself in lush coffee plantations and nature."
+  },
+   {
+    id: 1,
+    name: "The Grand Palace Hotel",
+    location: "Bangalore",
+    city: "Bangalore",
+    rating: 4.5,
+    reviews: 234,
+    price: 3500,
+    image: "https://images.unsplash.com/photo-1571896349842-33c89424de2d?w=800",
+    type: "Luxury",
+    amenities: ["WiFi", "Pool", "Parking", "Restaurant", "Gym", "Spa"],
+    description: "Experience luxury at its finest with world-class amenities and exceptional service."
   }
+  
 ];
 
 const Hotels = () => {

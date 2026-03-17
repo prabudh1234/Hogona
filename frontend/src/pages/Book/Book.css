@@ -1,0 +1,118 @@
+/* MAIN CONTAINER */
+
+.book-container{
+  max-width:900px;
+  margin:60px auto;
+  padding:30px;
+  font-family:"Poppins", sans-serif;
+}
+
+/* TITLE */
+
+.book-title{
+  text-align:center;
+  font-size:32px;
+  margin-bottom:30px;
+  color:#222;
+}
+
+/* HOTEL CARD */
+
+.book-card{
+  display:flex;
+  gap:20px;
+  background:#ffffff;
+  border-radius:12px;
+  padding:20px;
+  box-shadow:0 6px 20px rgba(0,0,0,0.1);
+  margin-bottom:30px;
+  align-items:center;
+}
+
+.hotel-image{
+  width:100%;
+  height:160px;
+  object-fit:cover;
+  border-radius:10px;
+}
+
+.book-info h2{
+  margin-bottom:8px;
+}
+
+.hotel-location{
+  color:#666;
+  margin-bottom:6px;
+}
+
+.price{
+  font-size:20px;
+  font-weight:600;
+  color:#00a884;
+}
+
+/* FORM */
+
+.book-form{
+  background:white;
+  padding:25px;
+  border-radius:12px;
+  box-shadow:0 6px 20px rgba(0,0,0,0.08);
+  display:flex;
+  flex-direction:column;
+  gap:12px;
+}
+
+.book-form input{
+  padding:10px;
+  border-radius:6px;
+  border:1px solid #ddd;
+  font-size:14px;
+}
+
+.book-form label{
+  font-size:14px;
+  color:#555;
+}
+
+/* BUTTON */
+
+.confirm-btn{
+  margin-top:10px;
+  padding:12px;
+  border:none;
+  border-radius:8px;
+  background:#00b894;
+  color:white;
+  font-size:15px;
+  cursor:pointer;
+  transition:0.3s;
+}
+
+.confirm-btn:hover{
+  background:#019875;
+  transform:scale(1.03);
+}
+
+/* NO HOTEL MESSAGE */
+
+.no-hotel{
+  text-align:center;
+  margin-top:100px;
+}
+
+/* RESPONSIVE */
+
+@media(max-width:768px){
+
+.book-card{
+  flex-direction:column;
+  text-align:center;
+}
+
+.hotel-image{
+  width:100%;
+  height:200px;
+}
+
+}

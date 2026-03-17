@@ -16,8 +16,8 @@ import img7 from "../../Assets/ebc.jpg";
 import img8 from "../../Assets/Pokhara.jpg";
 import img9 from "../../Assets/Kotilingeshwara.jpg";
 import img10 from "../../Assets/Hampi.jpg";
-import img11 from "../../Assets/KERALA House Boat.jpg";
-import img12 from "../../Assets/Bengaluru Fort.jpg";
+import img11 from "../../Assets/Kerala_Houseboat.jpg";  // FIXED: Removed space
+import img12 from "../../Assets/Bengaluru_Fort.jpg";    // FIXED: Removed space
 import img13 from "../../Assets/Chikkamagaluru.jpg";
 import img14 from "../../Assets/Mysore.jpg";
 import img15 from "../../Assets/Murudeshwar.jpg";
@@ -27,11 +27,10 @@ import ladakh from "../../Assets/ladakh.jpeg";
 import pangong from "../../Assets/pangong.jpg";
 import nubra from "../../Assets/nubra.jpg";
 
-
 import Aos from "aos";
 import "aos/dist/aos.css";
 
-// Export Data so it can be used in DestinationDetails
+// Export Data so it can be used in DestinationDetails and Packages
 export const Data = [
   {
     id: 1,
@@ -299,62 +298,6 @@ export const Data = [
         morning: "Climb stone steps to Ulleri village. Breakfast with mountain views.",
         afternoon: "Trek through rhododendron forest to Ghorepani.",
         evening: "Settle in teahouse. Explore the village.",
-      },
-      {
-        day: 3,
-        title: "Poon Hill Sunrise, Trek to Tadapani",
-        morning: "Pre-dawn hike to Poon Hill (3,210m) for sunrise over Himalayas. Return for breakfast.",
-        afternoon: "Trek to Tadapani through dense forest.",
-        evening: "Overnight at Tadapani teahouse.",
-      },
-      {
-        day: 4,
-        title: "Tadapani to Chhomrong",
-        morning: "Descend to Kimrong Khola, then climb to Chhomrong.",
-        afternoon: "Arrive at Chhomrong, gateway to Annapurna Sanctuary.",
-        evening: "Rest and preparation for higher altitude.",
-      },
-      {
-        day: 5,
-        title: "Chhomrong to Dovan",
-        morning: "Descend to Chhomrong Khola, cross suspension bridge.",
-        afternoon: "Climb to Sinuwa, continue to Bamboo and then Dovan.",
-        evening: "Overnight in the Modi Khola valley.",
-      },
-      {
-        day: 6,
-        title: "Dovan to Machhapuchhre Base Camp",
-        morning: "Trek through bamboo forest to Himalaya Hotel.",
-        afternoon: "Continue to Deurali and MBC (3,700m).",
-        evening: "Acclimatization and rest. Early dinner.",
-      },
-      {
-        day: 7,
-        title: "MBC to Annapurna Base Camp and Back",
-        morning: "Early morning trek to ABC (4,130m). Witness sunrise on Annapurna massif.",
-        afternoon: "Explore ABC, take photos. Descend to MBC or Deurali.",
-        evening: "Celebrate reaching base camp.",
-      },
-      {
-        day: 8,
-        title: "Descend to Bamboo",
-        morning: "Descend through the sanctuary to Dovan.",
-        afternoon: "Continue down to Bamboo.",
-        evening: "Rest at lower altitude.",
-      },
-      {
-        day: 9,
-        title: "Bamboo to Jhinu Danda",
-        morning: "Trek to Chhomrong, then descend to Jhinu Danda.",
-        afternoon: "Optional natural hot spring bath.",
-        evening: "Final night on trail.",
-      },
-      {
-        day: 10,
-        title: "Jhinu Danda to Nayapul, Drive to Pokhara",
-        morning: "Final day of trekking to Nayapul.",
-        afternoon: "Drive back to Pokhara.",
-        evening: "Celebration dinner in Pokhara.",
       }
     ],
     costBreakdown: {
@@ -404,83 +347,6 @@ export const Data = [
         morning: "Scenic flight from Kathmandu to Lukla (2,840m). Meet porter and guide team.",
         afternoon: "Begin trek to Phakding through pine forests along Dudh Koshi river.",
         evening: "First night in Sherpa teahouse.",
-      },
-      {
-        day: 2,
-        title: "Phakding to Namche Bazaar",
-        morning: "Cross suspension bridges, enter Sagarmatha National Park.",
-        afternoon: "Steep climb to Namche Bazaar (3,440m), the Sherpa capital.",
-        evening: "Explore the bustling mountain town.",
-      },
-      {
-        day: 3,
-        title: "Acclimatization Day in Namche",
-        morning: "Hike to Everest View Hotel for panoramic mountain views.",
-        afternoon: "Visit Sherpa Museum and local markets.",
-        evening: "Rest and acclimatization.",
-      },
-      {
-        day: 4,
-        title: "Namche to Tengboche",
-        morning: "Trek through rhododendron forests with Everest views.",
-        afternoon: "Arrive at Tengboche Monastery (3,860m).",
-        evening: "Attend evening prayer ceremony at monastery.",
-      },
-      {
-        day: 5,
-        title: "Tengboche to Dingboche",
-        morning: "Descend to Debuche, cross bridge over Imja Khola.",
-        afternoon: "Climb to Dingboche (4,410m) with views of Ama Dablam.",
-        evening: "Overnight in Dingboche.",
-      },
-      {
-        day: 6,
-        title: "Acclimatization Day in Dingboche",
-        morning: "Hike to Nagarjun Hill (5,100m) for acclimatization.",
-        afternoon: "Return to Dingboche, rest.",
-        evening: "Prepare for higher altitudes.",
-      },
-      {
-        day: 7,
-        title: "Dingboche to Lobuche",
-        morning: "Trek past memorials of climbers to Thukla Pass.",
-        afternoon: "Continue to Lobuche (4,940m).",
-        evening: "Rest at high altitude.",
-      },
-      {
-        day: 8,
-        title: "Lobuche to Gorak Shep to EBC",
-        morning: "Trek to Gorak Shep, last settlement before base camp.",
-        afternoon: "Continue to Everest Base Camp (5,364m). Celebrate achievement!",
-        evening: "Return to Gorak Shep for overnight.",
-      },
-      {
-        day: 9,
-        title: "Kala Patthar Sunrise, Descend to Pheriche",
-        morning: "Pre-dawn climb to Kala Patthar (5,545m) for sunrise on Everest.",
-        afternoon: "Descend to Pheriche.",
-        evening: "Lower altitude rest.",
-      },
-      {
-        day: 10,
-        title: "Pheriche to Namche Bazaar",
-        morning: "Long descent through Pangboche and Tengboche.",
-        afternoon: "Arrive back at Namche Bazaar.",
-        evening: "Celebration dinner.",
-      },
-      {
-        day: 11,
-        title: "Namche to Lukla",
-        morning: "Final day of trekking, descend to Lukla.",
-        afternoon: "Arrive in Lukla, pack up gear.",
-        evening: "Farewell dinner with trekking team.",
-      },
-      {
-        day: 12,
-        title: "Fly Back to Kathmandu",
-        morning: "Morning flight to Kathmandu.",
-        afternoon: "Rest and explore Thamel.",
-        evening: "Final celebration dinner.",
       }
     ],
     costBreakdown: {
@@ -535,20 +401,6 @@ export const Data = [
         morning: "Arrive in Pokhara, check into lakeside hotel.",
         afternoon: "Boat ride on Phewa Lake, visit Tal Barahi Temple. Explore Lakeside market.",
         evening: "Sunset from World Peace Pagoda. Dinner at lakeside restaurant.",
-      },
-      {
-        day: 2,
-        title: "Sarangkot Sunrise and Adventure Activities",
-        morning: "Early morning drive to Sarangkot for sunrise over Annapurna range.",
-        afternoon: "Paragliding experience (optional) or zip-lining. Visit Devi's Fall and Gupteshwor Cave.",
-        evening: "Visit International Mountain Museum. Relaxing evening by the lake.",
-      },
-      {
-        day: 3,
-        title: "Begnas Lake and Departure",
-        morning: "Visit peaceful Begnas Lake, kayaking or paddle boarding.",
-        afternoon: "Shopping for local handicrafts and souvenirs.",
-        evening: "Departure or extend stay.",
       }
     ],
     costBreakdown: {
@@ -637,13 +489,6 @@ export const Data = [
         morning: "Depart early from Bangalore. Visit Virupaksha Temple, one of the oldest functioning temples. Explore Hemakuta Hill for panoramic views.",
         afternoon: "Visit Vittala Temple Complex with the famous Stone Chariot. Explore the musical pillars and intricate carvings. Lunch at local restaurant.",
         evening: "Watch sunset from Matanga Hill. Check into heritage hotel. Dinner with traditional Karnataka cuisine.",
-      },
-      {
-        day: 2,
-        title: "Royal Enclosure & Return",
-        morning: "Visit Royal Enclosure, Lotus Mahal, and Elephant Stables. Explore the Queen's Bath and Hazara Rama Temple.",
-        afternoon: "Coracle ride on Tungabhadra River. Visit Anegundi village, birthplace of Hanuman according to legend. Lunch and departure.",
-        evening: "Return to Bangalore with memories of the empire.",
       }
     ],
     costBreakdown: {
@@ -688,13 +533,6 @@ export const Data = [
         morning: "Pick up from Cochin. Drive to Alleppey boat jetty. Board your private houseboat around noon. Welcome drink and briefing.",
         afternoon: "Cruise through narrow canals and Vembanad Lake. Watch village life, paddy fields, and coconut groves. Traditional Kerala lunch on board.",
         evening: "Sunset cruise with tea and snacks. Anchor for the night in peaceful backwaters. Authentic Kerala dinner with fresh catch of the day.",
-      },
-      {
-        day: 2,
-        title: "Village Exploration & Departure",
-        morning: "Wake up to serene backwater views. Traditional Kerala breakfast. Short village walk to experience local life.",
-        afternoon: "Final cruise through scenic routes. Check out at jetty around noon. Drive back to Cochin.",
-        evening: "Drop at Cochin airport/hotel.",
       }
     ],
     costBreakdown: {
@@ -780,13 +618,6 @@ export const Data = [
         morning: "Depart from Bangalore early morning. En route visit Yagachi Dam. Arrive at Chikkamagaluru, check into coffee estate resort.",
         afternoon: "Coffee plantation walk with expert. Learn about coffee cultivation from bean to cup. Visit Hirekolale Lake for scenic views. Lunch at resort.",
         evening: "Trek to Mullayanagiri Peak (highest in Karnataka) or relaxing evening at resort. Bonfire and coffee tasting session. Dinner with local Malnad cuisine.",
-      },
-      {
-        day: 2,
-        title: "Waterfalls & Temples",
-        morning: "Early morning trek to Baba Budangiri. Breakfast at resort. Visit Manikyadhara Falls.",
-        afternoon: "Explore Bhadra Wildlife Sanctuary or Hebbe Falls. Traditional lunch. Shopping for fresh coffee beans.",
-        evening: "Return to Bangalore with aromatic coffee memories.",
       }
     ],
     costBreakdown: {
@@ -874,13 +705,6 @@ export const Data = [
         morning: "Depart from Bangalore/Mangalore. Arrive at Murudeshwara. Visit the magnificent Shiva Temple and 123-feet tall statue.",
         afternoon: "Explore the temple tower (20 stories). Elevator ride for panoramic Arabian Sea views. Visit the temple museum. Beach time at Murudeshwara Beach. Lunch at sea-view restaurant.",
         evening: "Watch sunset from beach. Check into beach resort. Evening aarti at temple. Dinner with coastal Karnataka seafood.",
-      },
-      {
-        day: 2,
-        title: "Water Activities & Return",
-        morning: "Sunrise beach walk. Breakfast at resort. Water sports - banana boat, jet ski, or scuba diving (optional).",
-        afternoon: "Visit nearby Netrani Island (Pigeon Island) for snorkeling. Traditional coastal lunch. Shopping for local handicrafts.",
-        evening: "Return journey with spiritual and coastal memories.",
       }
     ],
     costBreakdown: {
@@ -1003,64 +827,7 @@ export const Data = [
       "Additional adventure activities",
       "Tips for guide and driver"
     ]
-  },
-  {
-  id: 19,
-  imgSrc: img17,
-  destTitle: "Munnar",
-  location: "Kerala",
-  grade: "HILL STATION",
-  fees: "6999",
-  description:
-    "Munnar is a breathtaking hill station known for its endless tea plantations, misty hills, waterfalls, and cool climate. Located in the Western Ghats, it is one of South India's most loved nature destinations.",
-  duration: "2 Days / 1 Night",
-  groupSize: "2-12 People",
-  images: [img17, img11, img13],
-  itinerary: [
-    {
-      day: 1,
-      title: "Tea Gardens & Waterfalls",
-      morning:
-        "Drive from Kochi to Munnar. Visit Cheeyappara and Valara waterfalls en route.",
-      afternoon:
-        "Check-in at resort. Visit Tea Museum and walk through tea plantations.",
-      evening:
-        "Visit Munnar town market. Bonfire and dinner at resort.",
-    },
-    {
-      day: 2,
-      title: "Top Station & Wildlife",
-      morning:
-        "Visit Top Station for sunrise views. Breakfast at resort.",
-      afternoon:
-        "Visit Eravikulam National Park and Mattupetty Dam.",
-      evening:
-        "Return to Kochi with memories.",
-    },
-  ],
-  costBreakdown: {
-    accommodation: 2500,
-    transportation: 1800,
-    guideFee: 600,
-    entryFees: 700,
-    meals: 1200,
-    miscellaneous: 199,
-  },
-  included: [
-    "1 night hill resort stay",
-    "All meals",
-    "AC transportation",
-    "Tea Museum entry",
-    "Local sightseeing",
-  ],
-  excluded: [
-    "Personal expenses",
-    "Camera fees",
-    "Adventure activities",
-    "Tips",
-  ],
-}
-
+  }
 ];
 
 const Main = () => {

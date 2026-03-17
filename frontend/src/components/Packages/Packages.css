@@ -185,7 +185,7 @@
   background: linear-gradient(to right, var(--light-blue) 0%, var(--light-blue) 50%, var(--border-color) 50%, var(--border-color) 100%);
   border-radius: 10px;
   outline: none;
-  -webkit-appearance: none;
+  
 }
 
 .range-slider input[type="range"]::-webkit-slider-thumb {
