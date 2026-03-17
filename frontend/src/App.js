@@ -8,11 +8,11 @@ import Hotels from './components/Hotels/Hotels';
 import About from './components/Main/About';
 import Contact from './components/Main/Contact';
 import DestinationDetails from './components/Main/DestinationDetails';
-import SignIn from './components/authenticator/SignIn';
 import NotFound from './components/NotFound';
 import SignUp from './components/authenticator/SignUp';
 import Packages from './components/Packages/Packages';
-import Book from "./pages/Book/Book";
+import Booking from "./components/Main/Booking";
+
 
 function App() {
   return (
@@ -26,9 +26,9 @@ function App() {
         <Route path="/about" element={<About />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/destination/:id" element={<DestinationDetails />} />
-        <Route path="/signin" element={<SignIn />} />   {/* ✅ FIXED */}
-        <Route path="/signup" element={<SignUp />} />
-        <Route path="/book" element={<Book />} />       {/* ✅ FIXED */}
+        <Route path="/SignIn" element={<SignUp />} />   
+        <Route path="/SignUp" element={<SignUp />} />
+        <Route path="/Booking" element={<Booking />} />     
 
         <Route path="*" element={<NotFound />} />
       </Routes>
